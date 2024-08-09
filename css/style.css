@@ -1,0 +1,164 @@
+/* Stili per il corpo e l'immagine */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    /* Assicurati che l'area del corpo occupi l'intera altezza della finestra */
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+/* Impostazioni per l'immagine */
+img {
+    margin-top: 20px; /* Margine superiore per l'immagine */
+    max-width: 100%; /* L'immagine si adatta alla larghezza dello schermo */
+    height: auto; /* Mantiene le proporzioni dell'immagine */
+}
+
+/* Contenitore principale per centrare verticalmente */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra verticalmente */
+    align-items: center;
+    width: 100%;
+    min-height: calc(100vh - 540px); /* Altezza disponibile sotto l'immagine */
+}
+
+/* Stili per il div .core */
+.core {
+    display: flex;
+    flex-direction: column; /* Disposizione verticale degli elementi */
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px; /* Spazio interno */
+    box-sizing: border-box;
+}
+
+/* Assicurati che gli elementi interni siano visualizzati come blocchi */
+#countdown,
+#motivation, 
+button {
+    display: block;
+    width: auto; /* Se vuoi che il pulsante mantenga la sua dimensione naturale */
+    margin: 10px 0; /* Spaziatura tra gli elementi */
+}
+
+#countdown {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    font-size: 4rem; /* Aumenta la dimensione del testo */
+    padding: 30px;
+}
+
+/* Media query per schermi con larghezza inferiore a 600px */
+@media (max-width: 600px) {
+    #countdown {
+        font-size: 1.8rem; /* Dimensione del testo ridotto */
+    }
+}
+
+#motivation {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight:300;
+    font-size: 2rem; /* Aumenta la dimensione del testo */
+    padding: 30px
+}
+
+/* Media query per schermi con larghezza inferiore a 600px */
+@media (max-width: 600px) {
+    #motivation {
+        font-size: 1.2rem; /* Dimensione del testo ridotto */
+    }
+}
+
+/* Stili per il pulsante */
+button {
+    display: block;
+    font-size: 2rem; /* Dimensione più grande del testo */
+    padding: 10px 20px; /* Aumenta le dimensioni del pulsante */
+    color: white; /* Testo bianco */
+    background-color: red; /* Sfondo rosso */
+    border: 2px solid transparent; /* Bordo trasparente */
+    border-radius: 50px; /* Aggiunge angoli arrotondati */
+    cursor: pointer; /* Cambia il cursore quando si passa sopra al pulsante */
+    margin: 10px 0;
+    transition: all 0.3s ease; /* Transizione morbida per l'hover */
+}
+
+/* Effetto hover */
+button:hover {
+    background-color: white; /* Sfondo bianco */
+    color: red; /* Testo rosso */
+    border: 2px solid red; /* Bordo rosso */
+}
+
+/* Nasconde i nuovi div inizialmente */
+#three-divs {
+    display: none; /* Nasconde completamente i div all'inizio */
+    justify-content: space-around;
+    width: 100%;
+    opacity: 0; /* Inizialmente invisibile per il fade-in */
+    max-height: calc(100vh - 540px); /* Limita l'altezza per non andare oltre lo schermo */
+    overflow: hidden; /* Evita overflow del contenuto */
+}
+
+/* Stile per i div neri */
+.black-box {
+    background-color: transparent;
+    display: flex; /* Flexbox per centrare l'immagine */
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1; /* I div crescono per riempire lo spazio disponibile */
+    margin: 10px;
+    max-width: 33%; /* Ogni div occupa un massimo di un terzo dello schermo */
+    animation: vibrate 0.5s infinite; /* Vibrazione continua */
+}
+
+/* Stile per le immagini */
+.face {
+    width: 100%; /* L'immagine occupa tutta la larghezza del div */
+    height: auto; /* Mantiene le proporzioni */
+    max-height: 100%; /* Limita l'altezza dell'immagine al 100% dell'altezza del div */
+    object-fit: contain; /* L'immagine si adatta mantenendo le proporzioni */
+}
+
+/* Classe generale per il fade-in */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 3s forwards;
+}
+
+/* Effetto di fade-in */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Animazione di vibrazione */
+@keyframes vibrate {
+    0% { transform: translate(0, 0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(2px, -2px); }
+    60% { transform: translate(-2px, -2px); }
+    80% { transform: translate(2px, 2px); }
+    100% { transform: translate(0, 0); }
+}
+
+/* Asincronia nella vibrazione */
+.black-box:nth-child(1) {
+    animation-delay: 0s; /* Nessun ritardo per il primo div */
+}
+
+.black-box:nth-child(2) {
+    animation-delay: 0.1s; /* Ritardo di 0.1 secondi per il secondo div */
+}
+
+.black-box:nth-child(3) {
+    animation-delay: 0.2s; /* Ritardo di 0.2 secondi per il terzo div */
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>IRONMAN</title>
+        <link rel="icon" type ="image/x-icon" href="imgs/logo.png">
+        <link rel="stylesheet" href="css/style.css">
+        <script defer type="text/javascript" src="js/countdown.js"></script>
+        <script defer type="text/javascript" src="js/motivation.js"></script>
+        <script defer type="text/javascript" src="js/button.js"></script>
+    </head>
+
+    <body>
+        <img src="imgs/ironman.png" alt="IRONMAN" >
+        <div class="container">
+            <div class="core">
+                <div id="countdown"></div>
+                <div id="motivation">motivation</div>
+                <button type="button" id="play-button" onclick="threeIronman()">Click Me!</button>
+            </div>
+
+            <!-- I nuovi div che appaiono dopo il click -->
+            <div id="three-divs" class="hidden">
+                <div class="black-box">
+                    <img class="face" src="imgs/nico.png" alt="nico" >
+                </div>
+                <div class="black-box">
+                    <img class="face" src="imgs/robi.png" alt="robi" >
+                </div>
+                <div class="black-box">
+                    <img class="face" src="imgs/luca.png" alt="luca" >
+                </div>
+            </div>
+
+        </div>    
+    </body>
+
+    <!-- Elemento audio -->
+    <audio id="ironman-audio" src="audio/rocky.mp3"></audio>
+
+</html>
